@@ -17,4 +17,5 @@ static public class StaticPlayer
         return mPlayer;
     }
     static public void SetSeenImage(bool value) { mSeenImage = value; }
+    static public bool GetSeenImage() { return mSeenImage; }
 }
