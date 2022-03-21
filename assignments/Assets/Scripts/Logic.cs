@@ -21,7 +21,7 @@ public class Logic : MonoBehaviour
 
     public void StartPlaying()
     {
-        Debug.LogWarning("ImageFound");
+        DebugLog.DrawDebugText("ImageFound");
         mWarning.gameObject.SetActive(false);
         if(!StaticPlayer.GetSeenImage())
         {
@@ -36,7 +36,7 @@ public class Logic : MonoBehaviour
     {
 
         mWarning.gameObject.SetActive(true);
-        Debug.LogWarning("ImageLost");
+        DebugLog.DrawDebugText("ImageLost");
         StaticPlayer.GetPlayer().gameObject.SetActive(false);
     }
 }
