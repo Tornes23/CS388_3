@@ -24,6 +24,12 @@ public class BallLogic : MonoBehaviour
         if (!mThrown)
         {
             transform.position = mCamTransfrorm.position;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                mThrown = true;
+                mRB.velocity = mCamTransfrorm.forward * 50.0f;
+            }
         }
         else
         {
@@ -38,11 +44,6 @@ public class BallLogic : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            mThrown = true;
-            mRB.velocity = mCamTransfrorm.forward * 50.0f;
-            mRB.velocity += new Vector3(0.0f, 1.0f, 0.0f) * 50.0f;
-        }
+        
     }
 }
