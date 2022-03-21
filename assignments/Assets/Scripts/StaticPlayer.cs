@@ -7,6 +7,7 @@ static public class StaticPlayer
 {
     static private Transform mPlayer;
     static private bool mSeenImage = false;
+    static private bool mPlaying = false;
 
     static public Transform GetPlayer()
     {
@@ -18,4 +19,6 @@ static public class StaticPlayer
     }
     static public void SetSeenImage(bool value) { mSeenImage = value; }
     static public bool GetSeenImage() { return mSeenImage; }
+    static public void SetPlaying(bool value) { mPlaying = value; }
+    static public bool GetPlaying() { return mPlaying; }
 }

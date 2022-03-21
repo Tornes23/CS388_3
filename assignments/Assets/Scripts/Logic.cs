@@ -29,7 +29,7 @@ public class Logic : MonoBehaviour
             LeanTween.alpha(mTutorial.rectTransform, 0.0F, 1.0F).setEase(LeanTweenType.linear);
         }
 
-        StaticPlayer.GetPlayer().gameObject.SetActive(true);
+        StaticPlayer.GetPlayer().position += new Vector3(0,10,0);
     }
 
     public void FocusLost()
@@ -37,6 +37,6 @@ public class Logic : MonoBehaviour
 
         mWarning.gameObject.SetActive(true);
         DebugLog.DrawDebugText("ImageLost");
-        StaticPlayer.GetPlayer().gameObject.SetActive(false);
+        StaticPlayer.GetPlayer().position -=new Vector3(0,10,0);
     }
 }
