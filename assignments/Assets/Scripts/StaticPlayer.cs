@@ -7,7 +7,8 @@ static public class StaticPlayer
 {
     static private Transform mPlayer;
     static private bool mSeenImage = false;
-    static private bool mPlaying = false;
+    //static private bool mPlaying = false;
+    static private bool mPlaying = true;
     static private int mScore = 0;
 
     static public Transform GetPlayer()

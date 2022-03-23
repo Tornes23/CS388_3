@@ -11,10 +11,11 @@ public class ScoreLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+            mWinText.color = new Color(0, 0, 0, 0);
         if (!StaticPlayer.GetPlaying())
         {
             mScore.color = new Color(1, 1, 1, 0);
-            mWinText.gameObject.SetActive(false);
+            mWinText.color = new Color(0, 0, 0, 0);
         }
 
         mScore.text = "Score: " + StaticPlayer.GetScore().ToString();
@@ -35,15 +36,15 @@ public class ScoreLogic : MonoBehaviour
         }
         if (StaticPlayer.GetScore() == WinCondition)
         {
-            mWinText.color = new Color(1, 1, 1, 1);
+            mWinText.color = new Color(0, 0, 0, 1);
         }
 
-        mScore.color = new Color(1, 1, 1, 1);
+        mScore.color = new Color(0, 0, 0, 1);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.CompareTag("Pelota"))
+        if (other.gameObject.CompareTag("Pelota"))
         {
             StaticPlayer.IncrementScore();
             mScore.text = "Score: " + StaticPlayer.GetScore().ToString();
