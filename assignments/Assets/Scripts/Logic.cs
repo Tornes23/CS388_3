@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Logic : MonoBehaviour
 {
+    public Transform mPos;
     public Image mTutorial;
     public Text mWarning;
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class Logic : MonoBehaviour
             LeanTween.alpha(mTutorial.rectTransform, 0.0F, 1.0F).setEase(LeanTweenType.linear);
         }
 
-        StaticPlayer.GetPlayer().position += new Vector3(0,10,0);
+        mPos.position += new Vector3(0,10,0);
     }
 
     public void FocusLost()
@@ -37,6 +38,6 @@ public class Logic : MonoBehaviour
 
         mWarning.gameObject.SetActive(true);
         DebugLog.DrawDebugText("ImageLost");
-        StaticPlayer.GetPlayer().position -=new Vector3(0,10,0);
+        mPos.position -=new Vector3(0,10,0);
     }
 }
