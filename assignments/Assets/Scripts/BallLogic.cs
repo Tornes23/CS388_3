@@ -113,15 +113,9 @@ public class BallLogic : MonoBehaviour
             {   //Up swipe
                 float power = (Mathf.Abs(lp.y - fp.y) / Screen.height) * 100.0f;
                 mRB.velocity = mCamTransfrorm.forward * power;
-                DebugLog.DrawDebugText(power.ToString());
                 mThrown = true;
             }
             
-        }
-        else
-        {   //It's a tap as the drag distance is less than 20% of the screen height
-
-            DebugLog.DrawDebugText("Tap");
         }
     }
 }

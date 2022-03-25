@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc774788ea824b4dae8c46535bd5834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mNextLevel: WinScreen
+  mNextLevel: Stroke
   mShowTime: 1
   mImage: {fileID: 2068566718}
   mbToOne: 1
