@@ -14,7 +14,7 @@ public class ScoreLogic : MonoBehaviour
             mWinText.color = new Color(0, 0, 0, 0);
         if (!StaticPlayer.GetPlaying())
         {
-            mScore.color = new Color(1, 1, 1, 0);
+            mScore.color = new Color(1, 0, 0, 0);
             mWinText.color = new Color(0, 0, 0, 0);
         }
 
@@ -30,7 +30,7 @@ public class ScoreLogic : MonoBehaviour
 
         if (!StaticPlayer.GetPlaying())
         {
-            mScore.color = new Color(1, 1, 1, 0);
+            mScore.color = new Color(1, 0, 0, 0);
             mWinText.color = new Color(1, 1, 1, 0);
             return;
         }
@@ -39,7 +39,7 @@ public class ScoreLogic : MonoBehaviour
             mWinText.color = new Color(0, 0, 0, 1);
         }
 
-        mScore.color = new Color(0, 0, 0, 1);
+        mScore.color = new Color(1, 0, 0, 1);
     }
 
     private void OnTriggerEnter(Collider other)

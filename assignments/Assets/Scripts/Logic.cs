@@ -24,26 +24,26 @@ public class Logic : MonoBehaviour
 
     public void StartPlaying()
     {
-        //StaticPlayer.SetPlaying(true);
-        //mWarning.color = new Color(1, 1, 1, 0);
-        //mWarning2.color = new Color(1, 1, 1, 0);
-        //
-        //if (!StaticPlayer.GetSeenImage())
-        //{
-        //    StaticPlayer.SetSeenImage(true);
-        //    LeanTween.alpha(mTutorial.rectTransform, 0.0F, 1.0F).setEase(LeanTweenType.linear);
-        //    mWarning.color = new Color(1, 1, 1, 0);
-        //    mWarning2.color = new Color(1, 1, 1, 0);
-        //}
-        //
-        //mPos.position += new Vector3(0,10,0);
+        StaticPlayer.SetPlaying(true);
+        mWarning.color = new Color(1, 1, 1, 0);
+        mWarning2.color = new Color(1, 1, 1, 0);
+        
+        if (!StaticPlayer.GetSeenImage())
+        {
+            StaticPlayer.SetSeenImage(true);
+            LeanTween.alpha(mTutorial.rectTransform, 0.0F, 1.0F).setEase(LeanTweenType.linear);
+            mWarning.color = new Color(1, 1, 1, 0);
+            mWarning2.color = new Color(1, 1, 1, 0);
+        }
+        
+        mPos.localPosition += new Vector3(0,10,0);
     }
 
     public void FocusLost()
     {
-        //StaticPlayer.SetPlaying(false);
-        //mWarning.color = new Color(1, 1, 1, 1);
-        //mWarning2.color = new Color(1, 1, 1, 1);
-        //mPos.position -=new Vector3(0,10,0);
+        StaticPlayer.SetPlaying(false);
+        mWarning.color = new Color(1, 1, 1, 1);
+        mWarning2.color = new Color(1, 1, 1, 1);
+        mPos.localPosition -= new Vector3(0,10,0);
     }
 }
