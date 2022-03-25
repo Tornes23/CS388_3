@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreLogic : MonoBehaviour
 {
-    public Text mScore;
+    public TextMesh mScore;
     public Text mWinText;
     public int WinCondition = 3;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class ScoreLogic : MonoBehaviour
             mWinText.color = new Color(0, 0, 0, 0);
         }
 
-        mScore.text = "Score: " + StaticPlayer.GetScore().ToString();
+        mScore.text = StaticPlayer.GetScore().ToString();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class ScoreLogic : MonoBehaviour
         if (other.gameObject.CompareTag("Pelota"))
         {
             StaticPlayer.IncrementScore();
-            mScore.text = "Score: " + StaticPlayer.GetScore().ToString();
+            mScore.text = StaticPlayer.GetScore().ToString();
         }
     }
 }
