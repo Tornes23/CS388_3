@@ -7,15 +7,18 @@ public class ScoreLogic : MonoBehaviour
 {
     public TextMesh mScore;
     public Text mWinText;
+    public Image mBlack;
     public int WinCondition = 3;
     // Start is called before the first frame update
     void Start()
     {
-            mWinText.color = new Color(0, 0, 0, 0);
+        mWinText.color = new Color(0, 0, 0, 0);
+        mBlack.color = new Color(0, 0, 0, 0);
         if (!StaticPlayer.GetPlaying())
         {
             mScore.color = new Color(1, 0, 0, 0);
             mWinText.color = new Color(0, 0, 0, 0);
+            mBlack.color = new Color(0, 0, 0, 0);
         }
 
         mScore.text = StaticPlayer.GetScore().ToString();
@@ -32,11 +35,14 @@ public class ScoreLogic : MonoBehaviour
         {
             mScore.color = new Color(1, 0, 0, 0);
             mWinText.color = new Color(1, 1, 1, 0);
+            mBlack.color = new Color(0, 0, 0, 0);
             return;
         }
         if (StaticPlayer.GetScore() == WinCondition)
         {
-            mWinText.color = new Color(0, 0, 0, 1);
+            StaticPlayer.Winner(true);
+            mWinText.color = new Color(1, 1, 1, 1);
+            mBlack.color = new Color(0, 0, 0, 1);
         }
 
         mScore.color = new Color(1, 0, 0, 1);

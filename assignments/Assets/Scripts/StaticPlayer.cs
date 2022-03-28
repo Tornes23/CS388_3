@@ -9,6 +9,7 @@ static public class StaticPlayer
     static private bool mSeenImage = false;
     //static private bool mPlaying = false;
     static private bool mPlaying = true;
+    static private bool mWon = false;
     static private int mScore = 0;
 
     static public Transform GetPlayer()
@@ -22,7 +23,9 @@ static public class StaticPlayer
     static public void SetSeenImage(bool value) { mSeenImage = value; }
     static public bool GetSeenImage() { return mSeenImage; }
     static public void SetPlaying(bool value) { mPlaying = value; }
+    static public void Winner(bool value) { mWon = value; }
     static public bool GetPlaying() { return mPlaying; }
+    static public bool GetWon() { return mWon; }
     static public int GetScore() { return mScore; }
     static public void IncrementScore() { mScore++; }
 }

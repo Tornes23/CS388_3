@@ -54,6 +54,11 @@ public class BallLogic : MonoBehaviour
     {
         transform.position = mCamTransfrorm.position;
 
+        if (!StaticPlayer.GetPlaying() || StaticPlayer.GetWon())
+        {
+            return;
+        }
+
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
             Touch touch = Input.GetTouch(0); // get the touch
@@ -112,7 +117,7 @@ public class BallLogic : MonoBehaviour
             if (lp.y > fp.y)  //If the movement was up
             {   //Up swipe
                 float power = (Mathf.Abs(lp.y - fp.y) / Screen.height) * 100.0f;
-                mRB.velocity = mCamTransfrorm.forward * power;
+                mRB.velocity = mCamTransfrorm.forward * power * 1.5f;
                 mThrown = true;
             }
             

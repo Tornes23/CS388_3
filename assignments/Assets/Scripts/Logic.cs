@@ -24,6 +24,9 @@ public class Logic : MonoBehaviour
 
     public void StartPlaying()
     {
+        if (StaticPlayer.GetWon())
+            return;
+
         StaticPlayer.SetPlaying(true);
         mWarning.color = new Color(1, 1, 1, 0);
         mWarning2.color = new Color(1, 1, 1, 0);
@@ -41,6 +44,8 @@ public class Logic : MonoBehaviour
 
     public void FocusLost()
     {
+        if (StaticPlayer.GetWon())
+            return;
         StaticPlayer.SetPlaying(false);
         mWarning.color = new Color(1, 1, 1, 1);
         mWarning2.color = new Color(1, 1, 1, 1);
